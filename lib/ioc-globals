@@ -258,6 +258,7 @@ CONF_JAIL="devfs_ruleset
            allow_chflags
            allow_mount
            allow_mount_devfs
+           allow_mount_fdescfs
            allow_mount_nullfs
            allow_mount_procfs
            allow_mount_tmpfs
