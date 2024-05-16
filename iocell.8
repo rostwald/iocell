@@ -1420,6 +1420,20 @@ allow_socket_af=0 | 1
 
 .fam T
 .fi
+allow_mlock=0 | 1
+.PP
+.nf
+.fam C
+    Locking or unlocking physical pages in memory are normally
+    not available within a jail. When this parameter is set,
+    users may mlock(2) or munlock(2) memory subject to
+    security.bsd.unprivileged_mlock and resource limits.
+
+    Default: 0
+    Source: jail(8)
+
+.fam T
+.fi
 host_hostuuid=\fIUUID\fP
 .PP
 .nf

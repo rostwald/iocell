@@ -83,6 +83,7 @@ allow_mount_tmpfs=0
 allow_mount_zfs=0
 allow_quotas=0
 allow_socket_af=0
+allow_mlock=0
 
 # RCTL limits
 cpuset="off"
@@ -263,6 +264,7 @@ CONF_JAIL="devfs_ruleset
            allow_mount_zfs
            allow_quotas
            allow_socket_af
+           allow_mlock
            host_hostuuid"
 
 # Custom properties

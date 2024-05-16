@@ -1009,6 +1009,16 @@ PROPERTIES
     Default: 0
     Source: jail(8)
 
+allow_mlock=0 | 1
+
+    Locking or unlocking physical pages in memory are normally
+    not available within a jail. When this parameter is set,
+    users may mlock(2) or munlock(2) memory subject to
+    security.bsd.unprivileged_mlock and resource limits.
+
+    Default: 0
+    Source: jail(8)
+
   host_hostuuid=UUID
 
     Default: UUID

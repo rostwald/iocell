@@ -319,6 +319,7 @@ __vnet_start () {
     allow.quotas="$(__get_jail_prop allow_quotas ${_fulluuid} ${_dataset})" \
     allow.socket_af="$(__get_jail_prop allow_socket_af ${_fulluuid} \
         ${_dataset})" \
+    allow.mlock="$(__get_jail_prop allow_mlock ${_fulluuid} ${_dataset})" \
     exec.prestart="$(__findscript ${_fulluuid} prestart ${_dataset})" \
     exec.poststart="$(__findscript ${_fulluuid} poststart ${_dataset})" \
     exec.prestop="$(__findscript ${_fulluuid} prestop ${_dataset})" \
@@ -462,6 +463,7 @@ __legacy_start () {
             ${_dataset})" \
         allow.socket_af="$(__get_jail_prop allow_socket_af "${_fulluuid}" \
             ${_dataset})" \
+        allow.mlock="$(__get_jail_prop allow_mlock ${_fulluuid} ${_dataset})" \
         exec.prestart="$(__findscript "${_fulluuid}" prestart ${_dataset})" \
         exec.poststart="$(__findscript "${_fulluuid}" poststart ${_dataset})" \
         exec.prestop="$(__findscript "${_fulluuid}" prestop ${_dataset})" \
@@ -526,6 +528,7 @@ __legacy_start () {
             ${_dataset})" \
         allow.socket_af="$(__get_jail_prop allow_socket_af "${_fulluuid}" \
             ${_dataset})" \
+        allow.mlock="$(__get_jail_prop allow_mlock ${_fulluuid} ${_dataset})" \
         exec.prestart="$(__findscript "${_fulluuid}" prestart ${_dataset})" \
         exec.poststart="$(__findscript "${_fulluuid}" poststart ${_dataset})" \
         exec.prestop="$(__findscript "${_fulluuid}" prestop ${_dataset})" \
