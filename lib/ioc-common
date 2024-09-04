@@ -535,7 +535,7 @@ __fetch_release () {
     _release=$(uname -r|cut -f 1,2 -d'-')
     # Needed to check for PC-BSD import
     _host_release=$(uname -r|cut -f 1,2 -d'-')
-    _grepmatch='STABLE$|PRERELEASE$|CURRENT$|BETA$'
+    _grepmatch='STABLE$|PRERELEASE$|CURRENT$|BETA$|RC$'
 
     for _args in "$@" ; do
         case "${_args}" in
