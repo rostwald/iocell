@@ -65,6 +65,7 @@ __networking () {
     _uuid="$2"
     _dataset="$3"
     _jid="$(jls -j ioc-${_uuid} jid)"
+    _jtag="$(__get_jail_prop tag ${_uuid} ${_dataset})"
     _dhcp="$(__get_jail_prop dhcp ${_uuid} ${_dataset})"
     local ip4="$(__get_jail_prop ip4_addr ${_uuid} $_dataset)"
     local ip6="$(__get_jail_prop ip6_addr ${_uuid} $_dataset)"
@@ -126,7 +127,7 @@ __networking () {
             ifconfig ${epair_a} name ${nic}:${_jid} mtu $brmtu
             _mac_epair_a="$(__validate_mac ${nic} ${_mac_offset} a ${_uuid} $_dataset)"
             ifconfig ${nic}:${_jid} link ${_mac_epair_a}
-            ifconfig ${nic}:${_jid} description "associated with jail: ${_uuid}"
+            ifconfig ${nic}:${_jid} description "associated with jail: ${_jtag} ${_uuid}"
             ifconfig $epair_b vnet ioc-${2}
             jexec ioc-${2} ifconfig $epair_b name $nic mtu $brmtu
             _mac_epair_b="$(__validate_mac ${nic} ${_mac_offset} b ${_uuid} $_dataset)"
