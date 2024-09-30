@@ -553,7 +553,7 @@ __fetch_release () {
             _answer="${_release}"
         else
             _release="${_answer}"
-            for _rel in $(echo ${supported}) ; do
+            for _rel in $(echo ${releases} ${prereleases} ${snapshots}) ; do
                 if [ "${_answer}" == "${_rel}" ] ; then
                     _release="${_rel}"
                     match="1"
